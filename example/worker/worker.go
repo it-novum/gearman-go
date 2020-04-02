@@ -7,8 +7,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/mikespook/gearman-go/worker"
-	"github.com/mikespook/golib/signal"
+	"github.com/it-novum/gearman-go/worker"
 )
 
 func ToUpper(job worker.Job) ([]byte, error) {
@@ -69,6 +68,6 @@ func main() {
 		return
 	}
 	go w.Work()
-	signal.Bind(os.Interrupt, func() uint { return signal.BreakExit })
-	signal.Wait()
+//	signal.Bind(os.Interrupt, func() uint { return signal.BreakExit })
+//	signal.Wait()
 }
